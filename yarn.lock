@@ -917,7 +917,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.12.13", "@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.x", "@babel/runtime@^7.12.13", "@babel/runtime@^7.8.4":
   version "7.17.8"
   resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.17.8.tgz#3e56e4aff81befa55ac3ac6a0967349fd1c5bca2"
   integrity sha512-dQpEpK0O9o6lj6oPu0gRDbbnk+4LeHlNcBpspf6Olzt3GIX4P1lWF1gS+pHLDFlaJvbR6q7jCfQ08zA4QJBnmA==
@@ -1255,10 +1255,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vant/icons@1.1.8":
-  version "1.1.8"
-  resolved "https://registry.npmmirror.com/@vant/icons/-/icons-1.1.8.tgz#2acd9b1c608fab7cfd25cf82dc0c9960d0f0495a"
-  integrity sha512-w8DVBQ7Hrr3Ut1KAawPy4pkxhEMDCuCTdVfFgbydLrv1k/unp/Ml0REZVEO2NN4W3Do5r1fypbsNOw1Sm33eLg==
+"@vant/icons@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmmirror.com/@vant/icons/-/icons-1.2.1.tgz#309fecb97a4989866f045ce676b545c454701c8f"
+  integrity sha512-5ivsKQR4ySbdBW5UPoQDVqO6rdc1um3rvq/0VL+ZSA7Y3MdBQ3E4/NL0hoAY5/sZZeYfIDKEP21gpjUzdeEDQQ==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0", "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
@@ -6335,13 +6335,13 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vant@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmmirror.com/vant/-/vant-2.0.0.tgz#3d87112aac1061f007bdce056a7af47d9ec0db05"
-  integrity sha512-nJx4EpDGWWafHVObrUst8VMHfaI9DkUuLyA7PM0iBGGp2eZI+itmxwGmucdWLOy5931ASasIqbbbqMBnrrSGHw==
+vant@2.5.7:
+  version "2.5.7"
+  resolved "https://registry.npmmirror.com/vant/-/vant-2.5.7.tgz#b8cdbd77366c6e32d149c7bbd67b9ec4ea1b908d"
+  integrity sha512-JD5SxrSI1K0cKTDx0d+UNd/we576WznGNv19ZrhEK943aP8NxyDZ9oI4ZpnR4VmMjTxdANB4JW0CqqeXHMMZ1w==
   dependencies:
-    "@babel/runtime" "^7.4.5"
-    "@vant/icons" "1.1.8"
+    "@babel/runtime" "7.x"
+    "@vant/icons" "1.2.1"
     "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
     vue-lazyload "1.2.3"
 

@@ -5,7 +5,9 @@ module.exports = {
         // },
         'postcss-pxtorem': {
             // rootValue属性就是告知postcss-pxtorem插件，一个rem是37.5px
-            rootValue: 37.5,
+            rootValue({ file }) {
+                return file.indexOf("vant") !== -1 ? 37.5 : 75
+            },
             propList: ['*']
         }
     }
