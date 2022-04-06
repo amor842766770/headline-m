@@ -2,9 +2,13 @@
 用户相关请求模块
  */
 import request from '@/utils/request'
+<<<<<<< HEAD
 import store from '@/store'
 
 //请求登录
+=======
+
+>>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
 export const login = data => {
     return request({
         method: 'POST',
@@ -12,12 +16,17 @@ export const login = data => {
         data
     })
 }
+<<<<<<< HEAD
 // 请求发送验证码
+=======
+
+>>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
 export const sendSms = (mobile) => {
     return request({
         method: 'GET',
         url: `/v1_0/sms/codes/${mobile}`,
     })
+<<<<<<< HEAD
 }
 //请求用户信息
 export const getUsrInfo = () => {
@@ -36,3 +45,6 @@ export const getUsrChannelLs = () => {
         url: '/v1_0/user/channels',
     })
 }
+=======
+}
+>>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce

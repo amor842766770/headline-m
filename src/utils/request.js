@@ -5,10 +5,10 @@
 import axios from 'axios'
 
 const request = axios.create(
-    { baseURL: "http://ttapi.research.it.cast.cn" }
+    { baseURL: "http://toutiao.itheima.net" }
 )
 
-// 请求拦截器
+// 请求拦截器L
 
 //响应拦截器
 

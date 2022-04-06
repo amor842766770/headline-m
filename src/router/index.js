@@ -7,6 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/login',
+<<<<<<< HEAD
     name: 'login',//如果父路由有默认子路由，那他的name没有意义
     component: () => import('@/views/login')
   },
@@ -36,6 +37,10 @@ const routes = [
         component: () => import('@/views/video')
       }
       ]
+=======
+    name: 'login',
+    component: () => import('@/views/login')
+>>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
   }
 ]
 

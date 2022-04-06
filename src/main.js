@@ -25,6 +25,18 @@ Vue.use(Field);
 Vue.use(NavBar);
 Vue.use(Popup);
 
+<<<<<<< HEAD
+=======
+import { NavBar, Form, Field, Toast, CountDown } from 'vant';
+
+Vue.use(CountDown);
+Vue.use(Toast);
+Vue.use(Vant);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(NavBar);
+
+>>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
 
 
 Vue.config.productionTip = false
