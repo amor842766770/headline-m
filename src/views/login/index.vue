@@ -1,13 +1,6 @@
 <template>
   <div class="login-container">
-    <!-- 登录标题 -->
-<<<<<<< HEAD
-    <van-nav-bar title="标题" left-arrow class="page_nav_bar">
-      <van-icon name="cross" slot="left" @click="$router.back()" />
-    </van-nav-bar>
-=======
     <van-nav-bar title="标题" left-arrow class="page_nav_bar" />
->>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
     <!-- 登录表单  -->
     <van-form @submit="onSubmit" ref="loginForm">
       <van-field
@@ -60,6 +53,8 @@
 
 <script>
 import { login, sendSms } from "@/api/usr";
+
+
 export default {
   name: "LoginIndex",
   data() {
@@ -109,14 +104,12 @@ export default {
       try {
         const { data } = await login(this.usr);
         this.$store.commit("setUser", data.data);
-        console.log(this.$store.user);
         this.$toast.success("登录成功！");
-<<<<<<< HEAD
         // 登录成功,跳转回原来页面 back方式不严谨
         this.$router.back()
-=======
->>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
+
       } catch (err) {
+        console.log(err);
         if (err.response.status === 400) {
           this.$toast.fail("手机号或验证码错误");
         } else {

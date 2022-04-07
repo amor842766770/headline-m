@@ -84,11 +84,7 @@ body {
 .page_nav_bar {
   background-color: #3296fa !important;
 }
-<<<<<<< HEAD
-.page_nav_bar .van-nav-bar__title,
-.page_nav_bar .van-icon::before {
-=======
-.page_nav_bar .van-nav-bar__title {
->>>>>>> eaa26ac34f3c236a66086ab8ffd8e6379009acce
+.page_nav_bar .van-nav-bar__title .van-nav-bar__title,
+.page_nav_bar .van-icon::before .van-nav-bar__title {
   color: #fff;
 }

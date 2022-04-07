@@ -9,6 +9,7 @@
         size="small"
         icon="search"
         class="search-btn"
+        to="/search"
       >
         搜索</van-button
       >
@@ -132,6 +133,7 @@ export default {
     font-size: 28px;
     .van-icon {
       font-size: 42px;
+      color: #fff;
     }
   }
   /deep/.channel-tabs {
