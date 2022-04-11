@@ -39,8 +39,20 @@ const routes = [
   },
   {
     path: '/search',
-    name: 'aearch',//如果父路由有默认子路由，那他的name没有意义
+    name: 'aearch',
     component: () => import('@/views/search')
+  },
+  {
+    path: '/article/:articleId',
+    name: 'article',
+    component: () => import('@/views/article'),
+    props: true//开启props传参，路由参数映射到组件的props数据中
+  },
+  {
+    path: '/user/profile',
+    name: 'user-profile',
+    component: () => import('@/views/user-profile'),
+    props: true//开启props传参，路由参数映射到组件的props数据中
   },
 ]
 

@@ -1,5 +1,6 @@
 <template>
-  <van-cell class="article-item">
+  <!-- :to="'/article/' + article.art_id" -->
+  <van-cell class="article-item" :to="`/article/${article.art_id}`">
     <div slot="title" class="title">{{ article.title }}</div>
 
     <div slot="label" class="label">
@@ -12,7 +13,7 @@
           <van-image width="100" height="100" :src="img" fit="cover" />
         </div>
       </div>
-      <span>{{ article.aut_name }}</span>
+      <span class="author-name">{{ article.aut_name }}</span>
       &nbsp;
       <span>{{ article.comm_count }}评论</span>
       &nbsp;

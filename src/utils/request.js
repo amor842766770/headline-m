@@ -4,9 +4,24 @@
 
 import axios from 'axios'
 import store from '@/store'
+import JSONBig from 'json-bigint'
+import router from '@/router'
+
+//JSONBig.parse() 把JSON格式的字符串转为JavaScript对象
+//JSONBig.stringify() 把JavaScript对象转为JSON格式的字符串
+
 
 const request = axios.create(
-    { baseURL: "http://toutiao.itheima.net" }
+    {
+        baseURL: "http://toutiao.itheima.net",
+        transformResponse: [function (data) {
+            try {
+                return JSONBig.parse(data)
+            } catch (error) {
+                return data
+            }
+        }],
+    }
 )
 
 // 请求拦截器
@@ -20,10 +35,11 @@ request.interceptors.request.use(function (config) {
 
     // 注意：这里务必要返回 config 配置对象，否则请求就停在这里出不去了
     return config
-}, function (error) {
-    // 如果请求出错了（还没有发出去）会进入这里
-    return Promise.reject(error)
-})
+},
+    function (error) {
+        // 如果请求出错了（还没有发出去）会进入这里
+        return Promise.reject(error)
+    })
 
 
 // 响应拦截器
@@ -40,29 +56,34 @@ request.interceptors.response.use(function (response) {
         const user = store.state.user
 
         // 2. 如果有refresh_token，调用刷新token的接口，拿到新的token
-        if (user && user.refresh_token) {
+        try {
+            if (user && user.refresh_token) {
+                const res = await axios({
+                    method: 'PUT',
+                    url: 'http://toutiao.itheima.net/v1_0/authorizations',
+                    headers: {
+                        Authorization: `Bearer ${user.refresh_token}`
+                    }
+                })
+                console.log(res.data.data.token);
 
-            const res = await axios({
-                method: 'PUT',
-                url: 'http://toutiao.itheima.net/v1_0/authorizations',
-                headers: {
-                    Authorization: `Bearer ${user.refresh_token}`
-                }
-            })
-            console.log(res.data.data.token);
+                // 1. 更新vuex和loaclStoreage存储的token
+                store.commit('setUser', {
+                    token: res.data.data.token,
+                    refresh_token: user.refresh_token
+                })
 
-            // 1. 更新vuex和loaclStoreage存储的token
-            store.commit('setUser', {
-                token: res.data.data.token,
-                refresh_token: user.refresh_token
-            })
-
-            // 2. 为原来调用接口方，重新去调用接口
-            console.log(error.config);
-            return request(error.config)
+                // 2. 为原来调用接口方，重新去调用接口
+                console.log(error.config);
+                return request(error.config)
+            }
+        } catch (error) {
+            store.commit('setUser', null)
+            router.push({ path: '/login' })
         }
     }
     return Promise.reject(error);
+    console.log(error);
 });
 
 export default request

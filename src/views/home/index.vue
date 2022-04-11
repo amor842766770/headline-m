@@ -11,8 +11,8 @@
         class="search-btn"
         to="/search"
       >
-        搜索</van-button
-      >
+        搜索
+      </van-button>
     </van-nav-bar>
     <!-- 导航栏 -->
     <!-- 频道列表 -->
@@ -99,7 +99,7 @@ export default {
           channels = localChannels
         } else {
           // 没有，请求获取默认频道列表
-          const { data } = await getUserChannels()
+          const { data } = await getUsrChannelLs()
           channels = data.data.channels
         }
       }

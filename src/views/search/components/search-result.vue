@@ -8,7 +8,12 @@
       error-text="加载失败,请点击重试"
       @load="onLoad"
     >
-      <van-cell v-for="obj in list" :key="obj.id" :title="obj.title" />
+      <van-cell
+        v-for="obj in list"
+        :key="obj.id"
+        :title="obj.title"
+        :to="`/article/${obj.art_id}`"
+      />
     </van-list>
   </div>
 </template>

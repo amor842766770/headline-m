@@ -39,4 +39,46 @@ export const getUsrChannelLs = () => {
         url: '/v1_0/user/channels',
     })
 }
+// 关注用户
+export const addFollow = target => {
+    return request({
+        method: 'POST',
+        url: '/v1_0/user/followings',
+        data: {
+            target
+        }
+    })
+}
+// 取消关注
+export const delFollow = target => {
+    return request({
+        method: 'DELETE',
+        url: '/v1_0/user/followings/' + target,
+    })
+}
+
+// 获取当前登录用户资料
+export const getUsrProfile = () => {
+    return request({
+        method: 'GET',
+        url: '/v1_0/user/profile',
+    })
+}
+// 修改当前登录用户资料
+export const editUsrProfile = data => {
+    return request({
+        method: 'PATCH',
+        url: '/v1_0/user/profile',
+        data
+    })
+}
+// 修改当前登录用户头像
+export const editUsrImg = data => {
+    return request({
+        method: 'PATCH',
+        url: '/v1_0/user/photo',
+        data
+    })
+}
+
 

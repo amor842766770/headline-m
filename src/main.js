@@ -8,8 +8,11 @@ import 'vant/lib/index.css'
 import 'amfe-flexible'// 动态设置rem值
 import './utils/dayjs' //加载dayjs，初始化配置
 
-import { NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Grid, GridItem, List, PullRefresh, Popup, Search } from 'vant';
+import { NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Grid, GridItem, List, PullRefresh, Popup, Search, Picker, DatetimePicker } from 'vant';
 
+
+Vue.use(DatetimePicker);
+Vue.use(Picker);
 Vue.use(Search);
 Vue.use(PullRefresh);
 Vue.use(List);
