@@ -100,7 +100,6 @@ export default {
     async loadUsrIinfo() {
       try {
         const { data } = await getUsrInfo()
-        console.log(data);
         this.usrInfo = data.data
       } catch (err) {
         this.$toast('获取数据失败，请稍后重试')
